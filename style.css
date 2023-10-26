@@ -266,6 +266,8 @@ body {
     mix-blend-mode: multiply;
   }
 
+  /* FIXME: не работает autoplay на мобильных устройствах */
+
 
   /* ===== MEDIA ====== */
 
@@ -309,6 +311,26 @@ body {
 
     .welcome-text {
       font-size: 24px;
+    }
+
+    .video {
+      display: none;
+    }
+
+    .video__title {
+      color: var(--main-color);
+    }
+  }
+
+
+  /* FIXME: костыль!!! из за видео */
+  @media (max-width: 420px) {
+    .welcome-text {
+      font-size: 18px;
+    }
+
+    .video__title {
+      font-size: 200px;
     }
   }
 
