@@ -146,6 +146,7 @@ body {
     
     .header__burger {
         display: flex;
+        align-items: center;
     }
 
     .header__nav {
@@ -237,6 +238,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
   .video__title {
@@ -259,12 +261,56 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-
+    max-width: 100%;
+    min-width: 374px;
     mix-blend-mode: multiply;
+  }
+
+
+  /* ===== MEDIA ====== */
+
+  @media (max-width: 1200px) {
+    .video__title {
+      font-size: 650px;
+    }
+  }
+
+  @media (max-width: 1110px) {
+    .video__title {
+      font-size: 600px;
+    }
+  }
+
+
+  @media (max-width: 1020px) {
+    .video__title {
+      font-size: 550px;
+    }
+  }
+  
+  @media (max-width: 935px) {
+    .video__title {
+      font-size: 450px;
+    }
+
+    .welcome-text {
+      margin-left: 10px;
+    }
+
+
   }
 
   
 
+  @media (max-width: 770px) {
+    .video__title {
+      font-size: 240px;
+    }
+
+    .welcome-text {
+      font-size: 24px;
+    }
+  }
 
 
   
