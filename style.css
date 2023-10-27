@@ -362,6 +362,7 @@ body {
 
 
   .popup {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -460,7 +461,7 @@ body {
   border: none;
 }
 
-
+/* FIXME: один большой при большой костыль, скорее всего из за видео */
 @media (max-width: 1190px) {
   .input {
     width: 300px;
