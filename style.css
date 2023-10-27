@@ -18,10 +18,13 @@
     /* border: 1px solid yellowgreen; */
 }
 
-
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
 body {
-    background-image: url(img/background.jpg);
+  background-image: url(img/background.jpg);
 }
 
 .container {
@@ -29,6 +32,7 @@ body {
     padding: 0 15px;
     margin: 0 auto;
 }
+
 
 .header__wrapper {
     display: flex;
