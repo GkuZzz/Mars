@@ -2,11 +2,18 @@
 :root {
     --red-color: #F23207;
     --main-color: #F2E1C2;
+    --popup-font-color: #262526;
 }
 
 @font-face {
   font-family: 'Bebas Neue';
   src: url(./ofont.ru_Bebas\ Neue.ttf);
+}
+
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 
@@ -18,17 +25,24 @@
     /* border: 1px solid yellowgreen; */
 }
 
-
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
 body {
-    background-image: url(img/background.jpg);
+  position: relative;
+  background-image: url('img/background.jpg');
 }
+
+
 
 .container {
     max-width: 1230px;
     padding: 0 15px;
     margin: 0 auto;
 }
+
 
 .header__wrapper {
     display: flex;
@@ -213,8 +227,12 @@ body {
   }
 
   .text {
-    
     padding-top: 10px;
+  }
+
+  .deco {
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
 
   .welcome-text {
@@ -229,6 +247,9 @@ body {
     text-transform: uppercase;
 
     margin-left: 25px;
+
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
   }
 
   
@@ -238,7 +259,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
   }
 
   .video__title {
@@ -253,6 +273,10 @@ body {
     letter-spacing: -10.729px;
 
     padding-top: 8px;
+
+
+    opacity: 0;
+    transition: opacity 0.5s ;
   }
 
   
@@ -264,6 +288,8 @@ body {
     max-width: 100%;
     min-width: 374px;
     mix-blend-mode: multiply;
+
+    opacity: 0;
   }
 
   /* FIXME: не работает autoplay на мобильных устройствах */
@@ -335,7 +361,215 @@ body {
   }
 
 
+  .popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vw;
+    background-color: var(--main-color);
+    z-index: 5;
+    color: var(--popup-font-color);
+  }
+
+
+  .popup__wrapper {
+    padding-top: 100px;
+    position: relative;
+  }
+
+  .popup__title {
+    color: var(--popup-font-color);
+    font-family: Bebas Neue;
+    font-size: 114px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.85px;
+    text-transform: uppercase; 
+  }
+
+  .popup__form {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .input {
+    border-bottom: 2px solid var(--popup-font-color);
+    width: 378px;
+  }
+
+  .form__title {
+    color: var(--popup-font-color);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  input {
+    border: none;
+    color: var(--popup-font-color);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background-color: inherit;
+    margin-bottom: 10px;
+  }
+
+  input[type=date]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  nput::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+.input__button {
+  position: absolute;
+  right: 0;
+
+  width: 380px;
+  height: 40px;
+  margin-top: 60px;
+
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+
+  background-color: var(--popup-font-color);
+}
+
+
+.exit__button {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  border: none;
+}
+
+
+@media (max-width: 1190px) {
+  .input {
+    width: 300px;
+  }
   
+}
+
+@media (max-width: 1072px) {
+  .popup {
+    height: 85vw;
+  }
+  
+}
+
+@media (max-width: 950px) {
+  .input {
+    width: 250px;
+  }
+
+  .input__button {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .popup {
+    height: 90vw;
+  }
+}
+
+@media (max-width: 890px) {
+  .popup {
+    height: 95vw;
+  }
+  
+}
+
+@media (max-width: 845px) {
+  .popup {
+    height: 100vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .popup {
+    height: 110vw;
+  }
+
+  .popup__form {
+    padding-top: 50px;
+    flex-direction: column;
+    gap: 20px
+  }
+
+  .input__button {
+    left: 0;
+    transform: translateX(0);
+    width: 250px;
+  }
+}
+
+@media (max-width: 845px) {
+  .popup {
+    height: 120vw;
+  }
+}
+
+@media (max-width: 668px) {
+  .popup {
+    height: 130vw;
+  }
+  .popup__title {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 620px) {
+  .popup {
+    height: 150vw;
+  }
+}
+
+@media (max-width: 530px) {
+  .popup {
+    height: 170vw;
+  }
+  .popup__title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 475px) {
+  .popup {
+    height: 200vw;
+  }
+}
+
+@media (max-width: 410px) {
+
+  .popup {
+    height: 230vw;
+  }
+
+  .popup__title {
+    font-size: 50px;
+  }
+}
+
+
+
 
 
   
